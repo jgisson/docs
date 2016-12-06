@@ -1,0 +1,17 @@
+#!/bin/sh
+PWD=`pwd`
+if [[ $PWD == *"mygit"* ]]
+then
+    EMAIL=$(git config user.email)
+    if [[ $EMAIL == *"jerome.gisson@gmail.com"* ]]
+    then
+        echo "";
+    else
+        echo "email not configured to personal email in mygit directory";
+	echo "run:"
+	echo '   git config user.email "jerome.gisson@gmail.com"'
+	echo ''
+	exit 1;
+    fi;
+fi;
+
