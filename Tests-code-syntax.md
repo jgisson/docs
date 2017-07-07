@@ -12,3 +12,7 @@ public static void main(String[] args) {
     System.out.println("Hello!");
 }
 ```
+
+```sql
+SELECT id, name, property FROM table WHERE name like 'TOTO%'
+```
