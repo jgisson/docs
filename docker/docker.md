@@ -52,8 +52,8 @@
 * Supprimer l'espace non utilisé: `docker volume rm $(docker volume ls -qf dangling=true)` 
 	
 ## [Windows] créer une machine virtualbox linux docker
-* `docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://user:pass@10.192.19.3:3128 default`
-* `docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://user:pass@10.192.19.3:3128 default --virtualbox-cpu-count "2" --virtualbox-disk-size "60000" --virtualbox-memory "4096"`
+* `docker-machine create -d "virtualbox" --virtualbox-cpu-count "2" --virtualbox-disk-size "40000" --virtualbox-memory "4096" default`
+* `docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://user:pass@10.192.19.3:3128 --virtualbox-cpu-count "2" --virtualbox-disk-size "60000" --virtualbox-memory "4096" default`
 * `docker-machine start default`
 * `docker-machine env default`
 
