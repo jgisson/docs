@@ -1,12 +1,12 @@
-#Docker configuration
-docker-machine start default
+# Docker configuration (Use for Docker Toolbox or Docker for Windows VM)
+#docker-machine start default
 # eval $(docker-machine env default)
-export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_MACHINE_NAME=default
-export DOCKER_TLS_VERIFY=1
-export DOCKER_CERT_PATH='C:\Users\jgisson\.docker\machine\machines\default'
-export DOCKER_IP=$(docker-machine ip)
-export NO_PROXY=$NO_PROXY,$DOCKER_IP
+#export DOCKER_HOST=tcp://192.168.99.100:2376
+#export DOCKER_MACHINE_NAME=default
+#export DOCKER_TLS_VERIFY=1
+#export DOCKER_CERT_PATH='C:\Users\jgisson\.docker\machine\machines\default'
+#export DOCKER_IP=$(docker-machine ip)
+#export NO_PROXY=$NO_PROXY,$DOCKER_IP
 
 # Alias standard
 alias ll='ls -l'
@@ -14,12 +14,7 @@ alias la='ls -al'
 
 # Docker alias
 alias dockps='docker ps -a --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
-alias dock-dbbpm='winpty docker exec -it bpm-mysql bash'
-alias dock-dbdfce='winpty docker exec -it dockercassandra bash'
-
-# Java alias
-alias msrun='java -jar -Xmx256m target/*.war --spring.profiles.active=dev --spring.output.ansi.enabled=ALWAYS'
-alias msregistry='java -jar -Xmx256m target/*.war --spring.profiles.active=prod,native,swagger --spring.output.ansi.enabled=ALWAYS'
+alias dock-cassandra='winpty docker exec -it dockercassandra bash'
 
 # Git alias
 alias ga='git add'
@@ -40,21 +35,21 @@ alias glo='git log --oneline --decorate'
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Maven alias
-alias mvnpack='mvn clean package -DskipTests'
-alias mvncie='mvn clean install eclipse:eclipse'
+alias mvnc='mvn clean'
+alias mvnp='mvn package'
+alias mvncp='mvn clean package'
+alias mvncpst='mvn clean package -DskipTests'
 alias mvnci='mvn clean install'
 alias mvncist='mvn clean install -DskipTests'
 alias mvncisto='mvn clean install -DskipTests --offline'
-alias mvne='mvn eclipse:eclipse'
-alias mvnce='mvn clean eclipse:clean eclipse:eclipse'
-alias mvncv='mvn clean verify'
 alias mvnd='mvn deploy'
-alias mvncp='mvn clean package'
-alias mvnp='mvn package'
-alias mvnc='mvn clean'
 alias mvncom='mvn compile'
 alias mvnct='mvn clean test'
 alias mvnt='mvn test'
+alias mvncie='mvn clean install eclipse:eclipse'
+alias mvne='mvn eclipse:eclipse'
+alias mvnce='mvn clean eclipse:clean eclipse:eclipse'
+alias mvncv='mvn clean verify'
 alias mvnag='mvn archetype:generate'
 alias mvn-updates='mvn versions:display-dependency-updates'
 alias mvntc7='mvn tomcat7:run' 
@@ -65,3 +60,6 @@ alias mvns='mvn site'
 alias mvnsrc='mvn dependency:sources'
 alias mvndocs='mvn dependency:resolve -Dclassifier=javadoc'
 
+# jHipster alias
+alias msrun='java -jar -Xmx256m target/*.war --spring.profiles.active=dev --spring.output.ansi.enabled=ALWAYS'
+alias msregistry='java -jar -Xmx256m target/*.war --spring.profiles.active=prod,native,swagger --spring.output.ansi.enabled=ALWAYS'
