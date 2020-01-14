@@ -18,6 +18,7 @@
 * `docker-compose -f sonar.yml up -d`
 * `docker-compose -f cassandra.yml up -d`
 * `docker run -p 8777:8080 -p 8888:8001 -e KIE_DEMO=false -d --name jbpm-workbench jboss/jbpm-workbench-showcase:6.4.0.Final`
+* `docker run --name some-nginx -v C:\instances\nginx\html:/usr/share/nginx/html:ro --publish 80:80 -d nginx`
 	
 ## Supprimer un container
 `docker rm <container id  || container-name>`
