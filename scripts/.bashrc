@@ -1,20 +1,15 @@
-# Docker configuration (Use for Docker Toolbox or Docker for Windows VM)
-#docker-machine start default
-# eval $(docker-machine env default)
-#export DOCKER_HOST=tcp://192.168.99.100:2376
-#export DOCKER_MACHINE_NAME=default
-#export DOCKER_TLS_VERIFY=1
-#export DOCKER_CERT_PATH='C:\Users\jgisson\.docker\machine\machines\default'
-#export DOCKER_IP=$(docker-machine ip)
-#export NO_PROXY=$NO_PROXY,$DOCKER_IP
+# Env
+export HISTSIZE=5000
 
 # Alias standard
 alias ll='ls -l'
 alias la='ls -al'
+alias find-process='netstat -aon | grep'
 
 # Docker alias
 alias dockps='docker ps -a --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
-alias dock-cassandra='winpty docker exec -it dockercassandra bash'
+alias dockstopall='docker stop $(docker ps -a -q)'
+alias cassandra='winpty docker exec -it dockercassandra bash'
 
 # Git alias
 alias ga='git add'
@@ -43,6 +38,7 @@ alias mvnci='mvn clean install'
 alias mvncist='mvn clean install -DskipTests'
 alias mvncisto='mvn clean install -DskipTests --offline'
 alias mvnd='mvn deploy'
+alias mvndst='mvn deploy -DskipTests'
 alias mvncom='mvn compile'
 alias mvnct='mvn clean test'
 alias mvnt='mvn test'
@@ -60,6 +56,6 @@ alias mvns='mvn site'
 alias mvnsrc='mvn dependency:sources'
 alias mvndocs='mvn dependency:resolve -Dclassifier=javadoc'
 
-# jHipster alias
+# Java alias
 alias msrun='java -jar -Xmx256m target/*.war --spring.profiles.active=dev --spring.output.ansi.enabled=ALWAYS'
-alias msregistry='java -jar -Xmx256m target/*.war --spring.profiles.active=prod,native,swagger --spring.output.ansi.enabled=ALWAYS'
+alias ms512='java -jar -Xmx512m target/*.war --spring.profiles.active=dev --spring.output.ansi.enabled=ALWAYS'
