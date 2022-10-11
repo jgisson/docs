@@ -13,6 +13,7 @@
 ## Supprimer une image
 * `docker rmi <image-id  || image-name>`
 * Supprimer toutes les images non utisées / taguées : `docker image prune`
+* Suppression des images dangling (none) : `docker rmi $(docker images --filter "dangling=true" -q --no-trunc)`
 
 ## Monter un container (instance d'image docker): 
 * `docker-compose up -d (fichier par defaut docker-compose.yml)`
