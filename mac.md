@@ -17,6 +17,8 @@ Installation  Macbook / Mac OS
 * Install sdkman : 
   * `curl -s "https://get.sdkman.io" | bash`
   * `source "$HOME/.sdkman/bin/sdkman-init.sh"`
+* Install JDK : `sdk install java [VERSION-VENDOR]`
+* Install Maven: `sdk install maven [VERSION]`
 * Install IntelliJ (download)
 * Conteneurs
   * Colima : `brew install colima`
@@ -36,3 +38,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ```
 * Install httpie: `brew install httpie`
+
+# Uninstall
+* Via brew: `brew uninstall --cask [APP]`
+
+# MongoDB Tools
+see [MonDB Notes](./MongoDB/MongoDB%20Notes.md)
