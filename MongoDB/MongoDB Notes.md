@@ -1,4 +1,66 @@
 
+## Features 
+### Aggregation
+Aggregation sample *$match* and *$group*: 
+```js
+db.sightings.aggregate([
+  { $match: { species_common: 'Eastern Bluebird' } },
+  { 
+    $group: { 
+        _id: '$location.coordinates', 
+        number_of_sightings: { $count: {} }
+    } 
+  }
+])
+```
+
+Aggregation sample *$sort* and *$limit*: 
+```js
+db.sightings.aggregate([
+  { $sort: { 'location.coordinates.1': -1 } },
+  { $limit: 4 }
+])
+```
+
+Aggregation sample *$project*: 
+```js
+db.sightings.aggregate([
+  { 
+    $project: {
+      'species_common': 1,
+      'date': 1,
+      '_id': 0
+    }
+  }
+])
+```
+
+Aggregation sample *$set*: 
+```js
+db.birds.aggregate([
+  { 
+    $set: { 'class': 'bird' }
+  }
+])
+```
+
+Aggregation sample *$match* and *$count*: 
+```js
+db.sightings.aggregate([
+  { 
+    $match: { 
+      species_common: 'Eastern Bluebird',
+      date: {
+          $gt: ISODate('2022-01-01T00:00:00.000Z'),
+          $lt: ISODate('2023-01-01T00:00:00.000Z')
+      }
+    }
+  }, {
+    $count: 'bluebird_sightings_2022'
+  }
+])
+```
+
 ## Tools
 ### mongosh
 Install: `brew install mongosh`

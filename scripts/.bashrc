@@ -8,8 +8,9 @@ alias find-process='netstat -aon | grep'
 
 # Docker alias
 alias dockps='docker ps -a --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
+alias dockimg='docker image inspect --format "{{.ID}} {{.RepoTags}} {{.Architecture}}" $(docker image ls -q)'
 alias dockstopall='docker stop $(docker ps -a -q)'
-alias cassandra='winpty docker exec -it dockercassandra bash'
+alias cassandra='docker exec -it dockercassandra bash'
 
 # Git alias
 alias ga='git add'

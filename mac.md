@@ -38,9 +38,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ```
 * Install httpie: `brew install httpie`
+* KeyStore Explorer (download)
 
 # Uninstall
 * Via brew: `brew uninstall --cask [APP]`
 
 # MongoDB Tools
-see [MonDB Notes](./MongoDB/MongoDB%20Notes.md)
+see [MongoDB Notes](./MongoDB/MongoDB%20Notes.md)
