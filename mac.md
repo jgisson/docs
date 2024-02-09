@@ -13,6 +13,11 @@ Installation  Macbook / Mac OS
 * Postman: `brew install --cask postman`
 * ?? Alfred ??
 
+# Brew
+* `brew update`
+* `brew upgrade`
+* `brew pin colima` / `brew unpin colima`
+
 # devs
 * Install sdkman : 
   * `curl -s "https://get.sdkman.io" | bash`
@@ -37,6 +42,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ```
+* Install Node
+  * Show local version : `nvm ls`
+  * Show version : `nvm ls-remote`
+  * Install: `nvm install [VERSION]`
+  * Use version: `nvm use [VERSION]`
 * Install httpie: `brew install httpie`
 * KeyStore Explorer (download)
 
