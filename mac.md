@@ -11,6 +11,7 @@ Installation  Macbook / Mac OS
 * Slack : `brew install --cask slack`
 * VLC: `brew install --cask vlc`
 * Postman: `brew install --cask postman`
+* htop: `brew install htop`
 * ?? Alfred ??
 
 # Brew
@@ -31,7 +32,6 @@ Installation  Macbook / Mac OS
   * start : `colima start`
   * start with k3s: `colima start -k`
   * start with Intel Arch: `colima start -a x86_64`
-* htop: `brew install htop`
 * Install nvm
   * `brew install nvm`
   * `mkdir ~/.nvm`
@@ -49,6 +49,13 @@ export NVM_DIR="$HOME/.nvm"
   * Use version: `nvm use [VERSION]`
 * Install httpie: `brew install httpie`
 * KeyStore Explorer (download)
+* Buildpacks
+  * brew install buildpacks/tap/pack
+  * Add to .zshrc or .zshrc.custom: `. $(pack completion --shell zsh)`
+
+# Ops
+* Google SDK : `brew install --cask google-cloud-sdk`
+
 
 # Uninstall
 * Via brew: `brew uninstall --cask [APP]`

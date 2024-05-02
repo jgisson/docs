@@ -69,6 +69,12 @@ Connect: `mongosh "mongodb+srv://[CLUSTER_NAME]/" --apiVersion 1 --username jgis
 ### Compass
 Install: `brew install --cask mongodb-compass`
 
+### Export / Import Data
+* Export / dump: `mongodump --uri=$CONNECTION_STRING -db $DB_NAME`
+* Export / dump ex: `mongodump --uri="mongodb://localhost:27017" -db $DB_NAME`
+* Import Data - DB : `mongorestore dump/`
+* Import Data - collection : `mongorestore --nsInclude=$DB_NAME.COL_NAME dump/`
+
 ## Atlas CLI
 
 - Login: `atlas auth register`

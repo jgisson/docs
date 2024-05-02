@@ -2,12 +2,18 @@
 
 ## General
 Aide : `gcloud -h`
-List d'Auth : `gcloud auth list`
+Authentification : `gcloud auth login $ACCOUNT`
 Liste projets: `gcloud config list project`
 
 Lister les comptes auth: `gcloud auth list`
 Changer de compte auth: `gcloud config set account [USERNAME]`
 Se loguer avec un compte de service: `gcloud auth activate-service-account --key-file credentials.json`
+
+Avoir l'organisation d'un projet : `gcloud projects get-ancestors $PROJECT_ID`
+Détails d'une organisation: `gcloud organizations describe $ORG_ID`
+Avoir la liste des organisations du compte courant : `gcloud organizations list`
+Lister les dossiers d'une organisation: `gcloud resource-manager folders list --organization=$ORG_ID`
+Lister les projets d'une arborescence: `gcloud projects list --filter='parent.id:$PARENT_ID'`
 
 ## Config 
 
@@ -37,7 +43,7 @@ gcloud compute instances add-tags gcelab2 --tags http-server,https-server
 gcloud compute firewall-rules create default-allow-http --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http-server
 gcloud compute firewall-rules list --filter=ALLOW:'80'
 
-### Groupes
+### Groupes de VM
 Template:
 ```sh
 gcloud compute instance-templates create lb-backend-template \
@@ -68,8 +74,10 @@ gcloud compute instance-groups managed create lb-backend-group \
 
 ## Conteneurs GKE
 Create Cluster: `gcloud container clusters create --machine-type=e2-medium --zone=us-central1-a lab-cluster`
+Détail d'un cluster : `gcloud container clusters describe $CLUSTER_NAME`
 Auth Cluster: `gcloud container clusters get-credentials lab-cluster [--project $PROJECT_ID]`
 Delete Cluster: gcloud container clusters delete lab-cluster
+Mettre un cluster à 0 noeud : `gcloud container clusters resize $CLUSTER_NAME --num-nodes=0`
 
 ## Cloud Functions
 * Créer une Cloud Function : 
