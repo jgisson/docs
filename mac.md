@@ -10,16 +10,20 @@ Installation  Macbook / Mac OS
 * iterm2 :  `brew install --cask iterm2`
 * Slack : `brew install --cask slack`
 * VLC: `brew install --cask vlc`
-* Postman: `brew install --cask postman`
+* HTTP Tools :
+  * Bruno: `brew install --cask bruno`
+  * Postman: `brew install --cask postman`
 * htop: `brew install htop`
 * ?? Alfred ??
 
 # Brew
 * `brew update`
+* `brew outdated`
 * `brew upgrade`
 * `brew pin colima` / `brew unpin colima`
 
 # devs
+* DevToys: `brew install --cask devtoys`
 * Install sdkman : 
   * `curl -s "https://get.sdkman.io" | bash`
   * `source "$HOME/.sdkman/bin/sdkman-init.sh"`
