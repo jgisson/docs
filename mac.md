@@ -1,10 +1,11 @@
-Installation  Macbook / Mac OS
+# Installation  Macbook / Mac OS
 
-# Commons
+## Commons
+
 * Microsoft 365 (download)
 * Install Homebrew :
   * `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  * Ajouter brew au PATH (.zshrc / .zshrc.custom) : **export PATH=/opt/homebrew/bin:$PATH** et **export PATH=/opt/homebrew/sbin:$PATH** 
+  * Ajouter brew au PATH (.zshrc / .zshrc.custom) : **export PATH=/opt/homebrew/bin:$PATH** et **export PATH=/opt/homebrew/sbin:$PATH**
 * VS Code : `brew install --cask visual-studio-code`
 * Install Oh My zsh : `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 * iterm2 :  `brew install --cask iterm2`
@@ -16,13 +17,15 @@ Installation  Macbook / Mac OS
 * htop: `brew install htop`
 * ?? Alfred ??
 
-# Brew
+## Brew
+
 * `brew update`
 * `brew outdated`
 * `brew upgrade`
 * `brew pin colima` / `brew unpin colima`
 
-# devs
+## devs
+
 * DevToys: `brew install --cask devtoys`
 * Install sdkman : 
   * `curl -s "https://get.sdkman.io" | bash`
@@ -40,12 +43,14 @@ Installation  Macbook / Mac OS
   * `brew install nvm`
   * `mkdir ~/.nvm`
   * Configuration shell (.bashrc / .zshrc)
+  
 ```sh
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ```
+
 * Install Node
   * Show local version : `nvm ls`
   * Show version : `nvm ls-remote`
@@ -57,12 +62,14 @@ export NVM_DIR="$HOME/.nvm"
   * brew install buildpacks/tap/pack
   * Add to .zshrc or .zshrc.custom: `. $(pack completion --shell zsh)`
 
-# Ops
+## Ops
+
 * Google SDK : `brew install --cask google-cloud-sdk`
 
+## MongoDB Tools
 
-# Uninstall
-* Via brew: `brew uninstall --cask [APP]`
-
-# MongoDB Tools
 see [MongoDB Notes](./MongoDB/MongoDB%20Notes.md)
+
+## Uninstall
+
+* Via brew: `brew uninstall --cask [APP]`

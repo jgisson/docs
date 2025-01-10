@@ -1,13 +1,16 @@
 
+# GCP CLI gcloud
 
 ## General
-Aide : `gcloud -h`
-Authentification : `gcloud auth login $ACCOUNT`
-Liste projets: `gcloud config list project`
 
-Lister les comptes auth: `gcloud auth list`
-Changer de compte auth: `gcloud config set account [USERNAME]`
-Se loguer avec un compte de service: `gcloud auth activate-service-account --key-file credentials.json`
+- Aide : `gcloud -h`
+- Mettre à jour : `gcloud components update`
+- Authentification : `gcloud auth login $ACCOUNT`
+- Liste projets: `gcloud config list project`
+
+- Lister les comptes auth: `gcloud auth list`
+- Changer de compte auth: `gcloud config set account [USERNAME]`
+- Se loguer avec un compte de service: `gcloud auth activate-service-account --key-file credentials.json`
 
 Avoir l'organisation d'un projet : `gcloud projects get-ancestors $PROJECT_ID`
 Détails d'une organisation: `gcloud organizations describe $ORG_ID`
@@ -15,7 +18,7 @@ Avoir la liste des organisations du compte courant : `gcloud organizations list`
 Lister les dossiers d'une organisation: `gcloud resource-manager folders list --organization=$ORG_ID`
 Lister les projets d'une arborescence: `gcloud projects list --filter='parent.id:$PARENT_ID'`
 
-## Config 
+## Config
 
 Aide config: `gcloud config --help`
 gcloud config list [--all]
@@ -30,6 +33,7 @@ export ZONE=$(gcloud config get-value compute/zone)
 gcloud config get-value project
 
 ## Compute Engine
+
 gcloud compute instances list [--filter="name=('gcelab2')"]
 
 gcloud compute instances create gcelab2 --machine-type e2-medium --zone $ZONE
@@ -44,6 +48,7 @@ gcloud compute firewall-rules create default-allow-http --direction=INGRESS --pr
 gcloud compute firewall-rules list --filter=ALLOW:'80'
 
 ### Groupes de VM
+
 Template:
 ```sh
 gcloud compute instance-templates create lb-backend-template \
@@ -73,6 +78,7 @@ gcloud compute instance-groups managed create lb-backend-group \
 ```
 
 ## Conteneurs GKE
+
 Create Cluster: `gcloud container clusters create --machine-type=e2-medium --zone=us-central1-a lab-cluster`
 Détail d'un cluster : `gcloud container clusters describe $CLUSTER_NAME`
 Auth Cluster: `gcloud container clusters get-credentials lab-cluster [--project $PROJECT_ID]`
@@ -159,4 +165,3 @@ gcloud compute forwarding-rules create http-content-rule \
 ## Tools
 - Lancer un build: `gcloud builds submit --tag gcr.io/$DEVSHELL_PROJECT_ID/devops-image:v0.1 .`
 - Deployer une app App Engine: `gcloud app deploy app.yaml`
-s

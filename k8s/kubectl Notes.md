@@ -37,3 +37,11 @@ Le plus petit objet déployable. Un pod peu contenir 1 ou plusiers containeurs. 
 
 ## Persistent Volume
 kubectl get persistentvolumeclaim
+
+## Secret
+
+```sh
+kubectl create secret generic $CLUSTER_NAME \
+    --from-literal=HUGGING_FACE_TOKEN=${HF_TOKEN} \
+    --dry-run=client -o yaml | kubectl apply -f -
+```
