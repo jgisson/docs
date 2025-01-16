@@ -1,5 +1,7 @@
 # Env
-export HISTSIZE=5000
+HISTSIZE=5000
+# Env override PATH (useful on Windows)
+#PATH='/d/tools/vscode/bin':$PATH
 
 # Alias standard
 alias ll='ls -l'
@@ -43,15 +45,11 @@ alias mvndst='mvn deploy -DskipTests'
 alias mvncom='mvn compile'
 alias mvnct='mvn clean test'
 alias mvnt='mvn test'
-alias mvncie='mvn clean install eclipse:eclipse'
 alias mvne='mvn eclipse:eclipse'
 alias mvnce='mvn clean eclipse:clean eclipse:eclipse'
 alias mvncv='mvn clean verify'
 alias mvnag='mvn archetype:generate'
 alias mvn-updates='mvn versions:display-dependency-updates'
-alias mvntc7='mvn tomcat7:run' 
-alias mvntc='mvn tomcat:run'
-alias mvnjetty='mvn jetty:run'
 alias mvndt='mvn dependency:tree'
 alias mvns='mvn site'
 alias mvnsrc='mvn dependency:sources'
