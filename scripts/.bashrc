@@ -5,6 +5,7 @@ export HISTSIZE=5000
 alias ll='ls -l'
 alias la='ls -al'
 alias find-process='netstat -aon | grep'
+alias mkcd='_mkcd(){ mkdir "$1"; cd "$1";}; _mkcd'
 
 # Docker alias
 alias dockps='docker ps -a --format "table {{.ID}}\t{{.Status}}\t{{.Names}}"'
