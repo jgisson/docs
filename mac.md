@@ -27,7 +27,7 @@
 ## devs
 
 * DevToys: `brew install --cask devtoys`
-* Install sdkman : 
+* Install sdkman:
   * `curl -s "https://get.sdkman.io" | bash`
   * `source "$HOME/.sdkman/bin/sdkman-init.sh"`
 * Install JDK : `sdk install java [VERSION-VENDOR]`
@@ -35,10 +35,20 @@
 * Install IntelliJ (download)
 * Conteneurs
   * Colima : `brew install colima`
-  * Docker : `brew install docker docker-compose`
+  * Docker : `brew install docker`
+  * Docker plugin:
+
+``` sh
+brew install docker-buildx docker-compose
+mkdir -p ~/.docker/cli-plugins
+ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+```
+
   * start : `colima start`
   * start with k3s: `colima start -k`
   * start with Intel Arch: `colima start -a x86_64`
+  * Docker socket access: `sudo ln -s $HOME/.colima/docker.sock /var/run/docker.sock` (For Testcontainers)
 * Install nvm
   * `brew install nvm`
   * `mkdir ~/.nvm`

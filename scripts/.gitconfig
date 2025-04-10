@@ -1,9 +1,10 @@
 [core]
 	editor = vim
 	autocrlf = input
+	hooksPath = ~/gitconfig/hooks
 [user]
 	name = jgisson
-	email = jgisson@ineat.fr
+	email = jerome.gisson@gmail.com
 [pull]
 	rebase = true
 [fetch]
