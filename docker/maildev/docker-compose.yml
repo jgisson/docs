@@ -1,0 +1,8 @@
+
+services:
+  maildev:
+    image: maildev/maildev:latest
+    container_name: maildev
+    ports:
+      - "2525:1025" # Port SMTP
+      - "8888:1080" # Port Web
