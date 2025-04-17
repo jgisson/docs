@@ -1,0 +1,31 @@
+{
+    // 💡 Inputs are prompted on first server start, then stored securely by VS Code.
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "github-token",
+            "description": "Github personal access token",
+            "password": true
+        }
+    ],
+    "servers": {
+        "github": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}",
+            }
+        },
+        "postgres": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-postgres",
+                "postgresql://root:xxxxxx@localhost/blogs"
+            ]
+        }
+    }
+}
