@@ -13,7 +13,7 @@
 - Slack : `brew install --cask slack`
 - VLC: `brew install --cask vlc`
 - htop: `brew install htop`
-- htop: `brew install btop`
+- btop: `brew install btop`
 
 ## Brew
 
@@ -38,6 +38,9 @@
   - Colima : `brew install colima`
   - Docker : `brew install docker`
   - Docker plugin:
+- ? Jujutsu (jj-vcs): `brew install jj`
+  - `jj config set --user user.name "Votre Nom"`
+  - `jj config set --user user.email "vous@example.com"`
 
 ```sh
 brew install docker-buildx docker-compose
@@ -50,11 +53,11 @@ ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugin
 - start with k3s: `colima start -k`
 - start with Intel Arch: `colima start -a x86_64`
 - Docker socket access: `sudo ln -s $HOME/.colima/docker.sock /var/run/docker.sock` (For Testcontainers)
+
 - Install nvm
   - `brew install nvm`
   - `mkdir ~/.nvm`
   - Configuration shell (.bashrc / .zshrc)
-
 ```sh
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -67,6 +70,8 @@ export NVM_DIR="$HOME/.nvm"
   - Show version : `nvm ls-remote`
   - Install: `nvm install [VERSION]`
   - Use version: `nvm use [VERSION]`
+  - Install pnpm: `npm install -g pnpm`
+  
 - Install httpie: `brew install httpie`
 - KeyStore Explorer (download)
 - Buildpacks
@@ -84,6 +89,9 @@ export NVM_DIR="$HOME/.nvm"
 - Google SDK : `brew install --cask google-cloud-sdk`
 
 ## MongoDB Tools
+
+- mongosh: `brew install mongosh``
+- MongoDB Compass: `brew install --cask mongodb-compass`
 
 see [MongoDB Notes](./MongoDB/MongoDB%20Notes.md)
 
