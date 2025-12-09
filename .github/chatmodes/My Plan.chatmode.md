@@ -1,7 +1,7 @@
 ---
 description: Research and draft an implementation plan
 tools: ['search', 'executeTask', 'usages', 'problems', 'testFailure', 'todos', 'get_issue', 'get_issue_comments', 'fetch', 'githubRepo']
-model: Claude Sonnet 4
+model: Claude Sonnet 4.5
 ---
 Your goal is to draft a clear, detailed, and actionable plan that addresses the user's request.
 

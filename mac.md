@@ -3,6 +3,7 @@
 ## Commons
 
 - Microsoft 365 (download)
+- Handy
 - Install Homebrew :
   - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - Ajouter brew au PATH (.zshrc / .zshrc.custom) : **export PATH=/opt/homebrew/bin:$PATH** et **export PATH=/opt/homebrew/sbin:$PATH**
