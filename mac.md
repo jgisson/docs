@@ -54,6 +54,16 @@ ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugin
 - start with k3s: `colima start -k`
 - start with Intel Arch: `colima start -a x86_64`
 - Docker socket access: `sudo ln -s $HOME/.colima/docker.sock /var/run/docker.sock` (For Testcontainers)
+- Configure Colima VM for an insecure VPN registry via VPN (like FortiClient):
+  * edit ~/.colima/default/colima.yaml
+```yml
+provision:
+  - mode: system
+    script: ip route add 192.168.60.0/24 via 192.168.106.1 dev col0
+```
+  * Démarrer colima en mode bridge : `colima start --network-address`
+
+
 
 - Install nvm
   - `brew install nvm`
